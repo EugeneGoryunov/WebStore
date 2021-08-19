@@ -4,10 +4,8 @@ namespace Store.Web.Models
 {
     public class Cart
     {
-        public IDictionary<int, int> Items { get; set; } = new Dictionary<int, int>();
+        public int OrderId { get; }
 
-        public decimal Amount { get; set; }
-
-        public int Count { get; set; }
+        public int TotalCount { get; set; }
     }
 }
