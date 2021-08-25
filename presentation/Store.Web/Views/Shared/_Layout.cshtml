@@ -17,27 +17,13 @@
             </form>
             <span class="navbar-text ml-auto">
                 @{ 
-                    Cart cart = new Cart();
-
-                    if (!Context.Session.TryGetCart(out cart))
+                    if (Context.Session.TryGetCart(out Cart cart) && cart.TotalCount > 0)
                     {
-                        cart = new Cart();
-                    }
-
-                    if (cart.Items.Count == 0)
-                    {
-                        @:Корзина пуста
+                        <a href="">Товаров @cart.TotalCount на сумму @cart.TotalPrice</a>
                     }
                     else
                     {
-                        @:Товаров 
-                        @foreach (var item in cart.Items.Values)
-                        {
-                            cart.Count += item;
-                        } 
-                        @cart.Count
-
-                        @:на сумму @cart.Amount
+                        @:Корзина пуста
                     }
                 }
             </span>
