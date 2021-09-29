@@ -16,7 +16,7 @@ namespace WebStore
         {
             Id = id;
             Isbn = isbn;
-            Author = Author;
+            Author = author;
             Title = title;
             Description = description;
             Price = price;
