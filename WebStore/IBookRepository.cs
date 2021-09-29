@@ -9,5 +9,6 @@ namespace WebStore
         Book[] GetAllByIsbn(string isbnPart);
         Book[] GetAllByTitle(string titleOrAuthorPart);
         Book GetById(int id);
+        Book[] GetAllByIds(IEnumerable<int> bookIds);
     }
 }
